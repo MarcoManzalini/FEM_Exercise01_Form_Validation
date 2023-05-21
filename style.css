@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ~ -> ALT + 126 */
+
+* {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: hsl(0, 100%, 74%);
+    background-image: url("./images/bg-intro-desktop.png");
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: white;
+    font-size: 50px;
+}
+
+.info__subtext {
+    color: white;
+    font-size: 16px;
+}
+
+.infopart {
+    width: 70%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+
+
+.info_button {
+    width: 100%;
+
+    padding: 15px;
+    margin-bottom: 5%;
+
+    background-color: hsl(248, 32%, 49%);
+    border-radius: 10px;
+    border: none;
+
+    color: white;
+    font-size: 16px;
+    text-align: center;
+
+}
+
+img {
+    display: none;
+
+    margin-right: 2%;
+}
+
+.form_container {
+    background-color: white;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    padding: 30px;
+}
+
+.form_input_part {
+    margin-bottom: 5%;
+}
+
+.inputContainer {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 5px;
+    border: none;
+}
+
+.inputType {
+    width: 100%;
+    padding: 15px;
+
+    border: none;
+    border-radius: 5px;
+}
+
+.inputType:focus {
+    outline: none;
+}
+
+/* I messaggi di errore li tengo nascosti finchè non ci sono */
+.error__message, .error__message__empty {
+    display: none;
+
+    color: red;
+    font-size: 10px;
+}
+
+/* Se il container della mail ha l'input invalido fai questo, il resto lo controllo nel JS */
+#emailContainer:has(#email:invalid) {
+    border: 1px solid red;
+}
+
+/* Se ho la mail invalida metto il display all'immagine nello stesso div*/
+#email:invalid ~ img {
+    display: block;
+
+}
+
+/* Stessa cosa di prima, se il container ha email invalida mostro il messaggio di errore corrispondente
+    Il resto lo controllo nel JS una volta cliccato il bottone
+*/
+#emailContainer:has(#email:invalid) ~ .error__message {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.trial_button {
+    background-color: hsl(154, 59%, 51%);
+    border-radius: 5px;
+    border: none;
+
+    color: white;
+    font-size: 16px;
+    text-align: center;
+
+    padding: 10px;
+    margin-bottom: 5%;
+
+    cursor: pointer;
+}
+
+.subscript {
+    display: flex;
+    justify-content: center;
+
+    text-align: center;
+    font-size: 10px;
+}
+
+.highlight__text {
+    color: hsl(154, 59%, 51%);
+    font-weight: 900;
+}
+
+@media screen and (max-width: 750px) {
+    .infopart {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 30px;
+
+        margin-bottom: 5%;
+    }
+
+    .info__subtext {
+        margin-bottom: 5%;
+    }
+
+    main {
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+}
